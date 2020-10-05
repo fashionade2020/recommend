@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+/*
 @font-face {
   font-family: "Roboto";
   font-style: normal;
@@ -9,6 +10,7 @@
   unicode-range: U+0020-007E;
   font-style: normal;
 }
+*/
 [data-fashionade-render="recommend"] * {
     margin:0;
     padding:0;
@@ -100,6 +102,7 @@
     color:#d9d9d9;
     font-weight:500;
     font-size:0.75rem;
+    cursor:pointer;
 }
 [data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendTitleList li.on {
     color:#555;
@@ -131,6 +134,7 @@
     background-size:55px 66px;
     background-size:cover;
     opacity:0.5;
+    background-color:#efefef;
 }
 [data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--mainImageThumbList li.on {
     opacity:1;
@@ -142,6 +146,7 @@
     float:right;
     width:283px;
     height:424px;
+    background-color:#efefef;
 }
 [data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList .fashionade--itemList {
     overflow:hidden;
@@ -165,6 +170,13 @@
     height:115px;
     background-size:113px 115px;
     background-size:cover;
+    background-color:#efefef;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--thumb a {
+    display:block;
+    width:113px;
+    height:115px;
+    text-indent:-99999em;
 }
 [data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--content {
     overflow:hidden;
@@ -183,6 +195,10 @@
     text-overflow:ellipsis;
     white-space:nowrap;
 }
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--content .fashionade--brand a {
+    color:#222;
+    text-decoration:none;
+}
 [data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--content .fashionade--name {
     overflow:hidden;
     width:113px;
@@ -192,16 +208,10 @@
     text-overflow:ellipsis;
     white-space:nowrap;
 }
-/*
-[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--content .fashionade--cart {
-  right:3px;
-  top:9px;
-  width:16px;
-  height:16px;
-  background:transparent url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyNCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIzIDMuNUwyMC41IDEyLjVIMTRINy41TDUuODYzNjQgMy41SDIzWiIgZmlsbD0iI0IzQjNCMyIvPgo8cGF0aCBkPSJNMC41IDEuNUg1LjVMNS44NjM2NCAzLjVNNy41IDEyLjVMNS44NjM2NCAzLjVNNy41IDEyLjVMOCAxNS41SDIwTTcuNSAxMi41SDE0SDIwLjVMMjMgMy41SDUuODYzNjQiIHN0cm9rZT0iI0IzQjNCMyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPGNpcmNsZSBjeD0iOSIgY3k9IjE4IiByPSIyIiBmaWxsPSIjQjNCM0IzIi8+CjxjaXJjbGUgY3g9IjE5IiBjeT0iMTgiIHI9IjIiIGZpbGw9IiNCM0IzQjMiLz4KPC9zdmc+Cg==") no-repeat 0 0;
-  background-size: 16px 16px;
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--content .fashionade--name a {
+    color:#555;
+    text-decoration:none;
 }
-*/
 [data-fashionade-render="recommend"] .fashionade--renderWrap {
     overflow:hidden;
     width:100%;
@@ -247,6 +257,7 @@
     color:#d9d9d9;
     font-weight:500;
     font-size:0.875rem;
+    cursor:pointer;
 }
 [data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--recommendTitleList li.on {
     color:#555;
@@ -277,6 +288,13 @@
     height:12.75rem;
     background-size:12.75rem 12.75rem;
     background-size:cover;
+    background-color:#efefef;
+}
+[data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--thumb a {
+    display:block;
+    width:12.75rem;
+    height:12.75rem;
+    text-indent:-99999em;
 }
 [data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--content {
     overflow:hidden;
@@ -292,9 +310,12 @@
     padding:0 0.313rem;
     font-size:0.875rem;
     font-weight:500;
-    color:#222;
     text-overflow:ellipsis;
     white-space:nowrap;
+}
+[data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--content .fashionade--brand a {
+    color:#222;
+    text-decoration:none;
 }
 [data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--content .fashionade--name {
     overflow:hidden;
@@ -305,4 +326,8 @@
     color:#555;
     text-overflow:ellipsis;
     white-space:nowrap;
+}
+[data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--content .fashionade--name a {
+    color:#555;
+    text-decoration:none;
 }
