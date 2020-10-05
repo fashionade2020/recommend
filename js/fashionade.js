@@ -136,6 +136,13 @@ var FASHIONADE = (function ($w) {
       img.src = imageUrl
     },
   }
+  var getUrlParams = function () {
+    var params = {}
+    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
+      params[key] = value
+    })
+    return params
+  }
   var getMadUuid = function () {
     if (localStorage.getItem('madUuid')) {
       return localStorage.getItem('madUuid')
@@ -152,7 +159,7 @@ var FASHIONADE = (function ($w) {
   var config = {
     apiUrl: 'https://dev.fashionade.ai:3000/api/v1/recommend-products',
     apiParams: {
-      productId: '1367',
+      productId: location.pathname.split('/')[3] || getUrlParams().productId || '',
       madUuid: getMadUuid(),
       userId: '',
       appKey: 'cahiers_test_9sdf9d8f982394hds9fhs9h923a',
