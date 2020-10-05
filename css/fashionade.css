@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lato";
+  unicode-range: U+0020-007E;
+  font-style: normal;
+}
+[data-fashionade-render="recommend"] * {
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    font-family:'Roboto', 'Lato', sans-serif;
+    vertical-align:baseline;
+    line-height:1;
+}
+[data-fashionade-render="recommend"] .fashionade--dimmed {
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    z-index:99998;
+    background-color:#000;
+    opacity:0.5;
+}
+[data-fashionade-render="recommend"] ol, [data-fashionade-render="recommend"] ul {
+    list-style:none;
+}
+[data-fashionade-render="recommend"] button:focus {
+    outline:0;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap {
+    position:fixed;
+    left:50%;
+    top:50%;
+    z-index:99999;
+    width:722px;
+    height:700px;
+    margin:-350px 0 0 -361px;
+    border:1px solid #bcb4b9;
+    background:#fff;
+}
+[data-fashionade-render="recommend"] .fashionade--layerInnerWrap {
+    position:relative;
+    width:718px;
+    height:696px;
+    border:2px solid #eaeaea;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--btn {
+    overflow:hidden;
+    display:block;
+    position:absolute;
+    background:#aaa;
+    border:0 none;
+    text-indent:-9999em !important;
+    cursor:pointer;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--close {
+    right:10px;
+    top:10px;
+    width:12px;
+    height:12px;
+    background:transparent url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTExIDFMMSAxMSIgc3Ryb2tlPSIjOUQ5RDlEIi8+CjxwYXRoIGQ9Ik0xIDFMMTEgMTEiIHN0cm9rZT0iIzlEOUQ5RCIvPgo8L3N2Zz4K") no-repeat 0 0;
+    background-size:12px 12px;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--prev {
+    top:326px;
+    left:34px;
+    width:24px;
+    height:48px;
+    background:transparent url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCAyNiA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI1IDQ5TDEgMjVMMjUgMSIgc3Ryb2tlPSIjREZERkRGIi8+Cjwvc3ZnPgo=") no-repeat 0 0;
+    background-size:24px 48px;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--next {
+    top:326px;
+    right:34px;
+    width:24px;
+    height:48px;
+    background:transparent url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCAyNiA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgMUwyNSAyNUwxIDQ5IiBzdHJva2U9IiNERkRGREYiLz4KPC9zdmc+Cg==") no-repeat 0 0;
+    background-size:24px 48px;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendTitleList {
+    overflow:hidden;
+    overflow-x:auto;
+    width:351px;
+    height:45px;
+    margin:0 auto;
+    padding-top:29px;
+    text-align:center;
+    white-space:nowrap;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendTitleList li {
+    display:inline-block;
+    padding:0 12px;
+    color:#d9d9d9;
+    font-weight:500;
+    font-size:0.75rem;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendTitleList li.on {
+    color:#555;
+    font-weight:800;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList {
+    overflow:hidden;
+    margin:0 auto;
+    width:351px;
+    height:622px;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList .fashionade--mainImageWrap {
+    overflow:hidden;
+    width:351px;
+    height:424px;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--mainImageThumbList {
+    overflow:hidden;
+    overflow-y:auto;
+    float:left;
+    width:55px;
+    height:424px;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--mainImageThumbList li {
+    overflow:hidden;
+    width:55px;
+    height:66px;
+    margin-top:6px;
+    background-size:55px 66px;
+    background-size:cover;
+    opacity:0.5;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--mainImageThumbList li.on {
+    opacity:1;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--mainImageThumbList li:first-child {
+    margin-top:0;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--mainImage {
+    float:right;
+    width:283px;
+    height:424px;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList .fashionade--itemList {
+    overflow:hidden;
+    overflow-x:auto;
+    width:351px;
+    height:182px;
+    margin-top:16px;
+    white-space:nowrap;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item {
+    display:inline-block;
+    width:113px;
+    height:182px;
+    margin-left:6px;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item:first-child {
+    margin-left:0;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--thumb {
+    width:113px;
+    height:115px;
+    background-size:113px 115px;
+    background-size:cover;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--content {
+    overflow:hidden;
+    position:relative;
+    width:113px;
+    height:37px;
+    color:#9d9d9d;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--content .fashionade--brand {
+    overflow:hidden;
+    width:113px;
+    margin-top:7px;
+    font-size:12px;
+    font-weight:500;
+    color:#222;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--content .fashionade--name {
+    overflow:hidden;
+    width:113px;
+    margin-top:3px;
+    font-size:10px;
+    color:#555;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+/*
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--content .fashionade--cart {
+  right:3px;
+  top:9px;
+  width:16px;
+  height:16px;
+  background:transparent url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyNCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIzIDMuNUwyMC41IDEyLjVIMTRINy41TDUuODYzNjQgMy41SDIzWiIgZmlsbD0iI0IzQjNCMyIvPgo8cGF0aCBkPSJNMC41IDEuNUg1LjVMNS44NjM2NCAzLjVNNy41IDEyLjVMNS44NjM2NCAzLjVNNy41IDEyLjVMOCAxNS41SDIwTTcuNSAxMi41SDE0SDIwLjVMMjMgMy41SDUuODYzNjQiIHN0cm9rZT0iI0IzQjNCMyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPGNpcmNsZSBjeD0iOSIgY3k9IjE4IiByPSIyIiBmaWxsPSIjQjNCM0IzIi8+CjxjaXJjbGUgY3g9IjE5IiBjeT0iMTgiIHI9IjIiIGZpbGw9IiNCM0IzQjMiLz4KPC9zdmc+Cg==") no-repeat 0 0;
+  background-size: 16px 16px;
+}
+*/
+[data-fashionade-render="recommend"] .fashionade--renderWrap {
+    overflow:hidden;
+    width:100%;
+    margin:1.5rem 0;
+    height:20.188rem;
+}
+[data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--btn {
+    overflow:hidden;
+    display:block;
+    position:absolute;
+    background:#aaa;
+    border:0 none;
+    text-indent:-9999em !important;
+    cursor:pointer;
+}
+[data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--prev {
+    top:10.438rem;
+    left:1.563rem;
+    width:1.5rem;
+    height:3rem;
+    background:transparent url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCAyNiA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI1IDQ5TDEgMjVMMjUgMSIgc3Ryb2tlPSIjOUQ5RDlEIi8+Cjwvc3ZnPgo=") no-repeat 0 0;
+    background-size:1.5rem 3rem;
+}
+[data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--next {
+    top:10.438rem;
+    right:1.563rem;
+    width:1.5rem;
+    height:3rem;
+    background:transparent url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCAyNiA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgMUwyNSAyNUwxIDQ5IiBzdHJva2U9IiM5RDlEOUQiLz4KPC9zdmc+Cg==") no-repeat 0 0;
+    background-size:1.5rem 3rem;
+}
+[data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--recommendTitleList {
+    overflow:hidden;
+    overflow-x:auto;
+    height:1.063rem;
+    margin:0 auto;
+    text-align:center;
+    white-space:nowrap;
+}
+[data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--recommendTitleList li {
+    display:inline-block;
+    padding:0 1.25rem;
+    color:#d9d9d9;
+    font-weight:500;
+    font-size:0.875rem;
+}
+[data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--recommendTitleList li.on {
+    color:#555;
+    font-weight:800;
+}
+[data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--recommendContentList {
+    overflow:hidden;
+    margin:0 auto;
+    width:48.876rem;
+}
+[data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--recommendContentList .fashionade--itemList {
+    overflow:hidden;
+    height:16.125rem;
+    margin-top:3rem;
+    white-space:nowrap;
+}
+[data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item {
+    display:inline-block;
+    width:12.75rem;
+    height:16.125rem;
+    margin-left:5.313rem;
+}
+[data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item:first-child {
+    margin-left:0;
+}
+[data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--thumb {
+    width:12.75rem;
+    height:12.75rem;
+    background-size:12.75rem 12.75rem;
+    background-size:cover;
+}
+[data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--content {
+    overflow:hidden;
+    position:relative;
+    width:12.75rem;
+    height:2.75rem;
+    color:#9d9d9d;
+}
+[data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--content .fashionade--brand {
+    overflow:hidden;
+    width:12.124rem;
+    margin-top:0.625rem;
+    padding:0 0.313rem;
+    font-size:0.875rem;
+    font-weight:500;
+    color:#222;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+[data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--content .fashionade--name {
+    overflow:hidden;
+    width:12.124rem;
+    margin-top:0.15rem;
+    padding:0 0.313rem;
+    font-size:0.75rem;
+    color:#555;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
