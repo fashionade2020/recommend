@@ -158,7 +158,7 @@ var FASHIONADE = (function ($w) {
     var config = {
         apiUrl: 'https://www.fashionade.ai/api/v1/recommend-products',
         apiParams: {
-            productId: location.pathname.split('/')[3] || getUrlParams().productId || '',
+            productId: getUrlParams().productId || location.pathname.split('/')[3] || '',
             madUuid: getMadUuid(),
             userId: '',
             appKey: 'cahiers_test_9sdf9d8f982394hds9fhs9h923a',
@@ -166,16 +166,16 @@ var FASHIONADE = (function ($w) {
     };
     var genLogData = function(type) {
         return {
-            "type": type,
-            "appKey": "cahiers_test_9sdf9d8f982394hds9fhs9h923a",
-            "uuid": getMadUuid(),
-            "userId": "",
-            "userAgent": navigator.userAgent,
-            "lang": navigator.language,
-            "page": location.href,
-            "referrer": document.referrer,
-            "ext": {},
-            "deviceTime": new Date()
+            type: type,
+            appKey: 'cahiers_test_9sdf9d8f982394hds9fhs9h923a',
+            uuid: getMadUuid(),
+            userId: '',
+            userAgent: navigator.userAgent,
+            lang: navigator.language,
+            page: location.href,
+            referrer: document.referrer,
+            ext: {},
+            deviceTime: new Date()
         };
     };
     var postLogs = function(type) {
@@ -190,20 +190,21 @@ var FASHIONADE = (function ($w) {
             return params.substring(0, params.length - 1)
         },
     };
-
-    document.addEventListener('DOMContentLoaded', function () {
+    var render = function() {
         get(config.apiUrl + utils.jsonToParams(config.apiParams), function (d) {
+            FASHIONADE.LOGS('init');
+
             if (d.length > 0) {
                 if ($('[data-fashionade-render-recommend-type="overlay"]') && $('[data-fashionade-open-layer="recommend"]')) {
                     $('[data-fashionade-open-layer="recommend"]').onclick = function () {
                         $('[data-fashionade-render-recommend-type="overlay"]').innerHTML =
-                        '<div class="fashionade--layerWrap"><div class="fashionade--layerInnerWrap">' +
-                        strTitle(d, 'overlay') +
-                        strContent(d, 'overlay') +
-                        (d.length > 1 ? '<button class="fashionade--btn fashionade--prev" onClick="FASHIONADE.RECOMMEND_LAYER_DIRECT(-1)">이전 추천보기</button> \
+                            '<div class="fashionade--layerWrap"><div class="fashionade--layerInnerWrap">' +
+                            strTitle(d, 'overlay') +
+                            strContent(d, 'overlay') +
+                            (d.length > 1 ? '<button class="fashionade--btn fashionade--prev" onClick="FASHIONADE.RECOMMEND_LAYER_DIRECT(-1)">이전 추천보기</button> \
                         <button class="fashionade--btn fashionade--next" onClick="FASHIONADE.RECOMMEND_LAYER_DIRECT(1)">다음 추천보기</button>' : '') +
-                        '<button class="fashionade--btn fashionade--close" onClick="FASHIONADE.RECOMMEND_LAYER_REMOVE()">닫기</button></div></div> \
-                        <div class="fashionade--dimmed" onClick="FASHIONADE.RECOMMEND_LAYER_REMOVE()"></div>';
+                            '<button class="fashionade--btn fashionade--close" onClick="FASHIONADE.RECOMMEND_LAYER_REMOVE()">닫기</button></div></div> \
+                            <div class="fashionade--dimmed" onClick="FASHIONADE.RECOMMEND_LAYER_REMOVE()"></div>';
 
                         FASHIONADE.LOGS('open');
                     }
@@ -211,20 +212,19 @@ var FASHIONADE = (function ($w) {
 
                 if ($('[data-fashionade-render-recommend-type="render"]')) {
                     $('[data-fashionade-render-recommend-type="render"]').innerHTML =
-                    '<div class="fashionade--renderWrap">' +
-                    strTitle(d) +
-                    strContent(d) +
-                    (d.length > 1 ? '<button class="fashionade--btn fashionade--prev" onClick="FASHIONADE.RECOMMEND_DIRECT(-1)">이전 추천보기</button> \
+                        '<div class="fashionade--renderWrap">' +
+                        strTitle(d) +
+                        strContent(d) +
+                        (d.length > 1 ? '<button class="fashionade--btn fashionade--prev" onClick="FASHIONADE.RECOMMEND_DIRECT(-1)">이전 추천보기</button> \
                     <button class="fashionade--btn fashionade--next" onClick="FASHIONADE.RECOMMEND_DIRECT(1)">다음 추천보기</button>' : '') +
-                    '</div>';
+                        '</div>';
 
                     FASHIONADE.LOGS('render');
                 }
             }
-
-            FASHIONADE.LOGS('init');
-        })
-    })
+        });
+    };
+    document.addEventListener('DOMContentLoaded', render);
 
     return {
         RECOMMEND_DATA: RECOMMEND.DATA,
@@ -236,6 +236,7 @@ var FASHIONADE = (function ($w) {
         RECOMMEND_LAYER_MAINIMAGE: RECOMMEND.layer_showMainImage,
         LOGS : function(type) {
             postLogs(type);
-        }
+        },
+        RENDER: render
     }
 })(window)

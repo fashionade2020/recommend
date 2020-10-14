@@ -151,7 +151,6 @@
 }
 [data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--thumb {
     height:115px;
-    background-size:113px 115px;
     background-size:cover;
     background-color:#efefef;
 }
@@ -207,7 +206,7 @@
     cursor:pointer;
 }
 [data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--prev {
-    top:168px;
+    top:210px;
     left:25px;
     width:24px;
     height:48px;
@@ -215,7 +214,7 @@
     background-size:24px 48px;
 }
 [data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--next {
-    top:168px;
+    top:210px;
     right:25px;
     width:24px;
     height:48px;
@@ -264,7 +263,6 @@
 }
 [data-fashionade-render="recommend"] .fashionade--renderWrap .fashionade--recommendContentList .fashionade--itemList .fashionade--item .fashionade--thumb {
     height:204px;
-    background-size:204px 204px;
     background-size:cover;
     background-color:#efefef;
 }
@@ -325,5 +323,8 @@
     [data-fashionade-render="recommend"] .fashionade--layerInnerWrap {
         width:100%;
         border:0 none;
+    }
+    .fashionade--prev, .fashionade--next {
+        display:none !important;
     }
 }
