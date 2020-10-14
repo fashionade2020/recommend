@@ -221,6 +221,10 @@ var FASHIONADE = (function ($w) {
 
                     FASHIONADE.LOGS('render');
                 }
+
+                if ($('.fashionade--btn-overlay')) {
+                    $('.fashionade--btn-overlay').style.display='block';
+                }
             }
         });
     };
