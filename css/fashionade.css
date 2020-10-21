@@ -17,6 +17,7 @@
     font-family:'Roboto', 'Lato', sans-serif;
     vertical-align:baseline;
     line-height:1;
+    box-sizing:content-box !important;
 }
 [data-fashionade-render="recommend"] .fashionade--dimmed {
     position:fixed;
@@ -316,8 +317,8 @@
         margin:0 auto;
     }
     .fashionade--item {
-        width:33% !important;
-        margin-left:3% !important;
+        width:32% !important;
+        margin-left:2% !important;
     }
     .fashionade--item:first-child {
         margin-left:0 !important;
