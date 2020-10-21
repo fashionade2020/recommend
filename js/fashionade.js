@@ -179,7 +179,7 @@ var FASHIONADE = (function ($w) {
         };
     };
     var postLogs = function(type) {
-      post('https://admin.fashionade.ai/dev_logs', genLogData(type));
+      post('https://admin.fashionade.ai/logs', genLogData(type));
     };
     var utils = {
         jsonToParams: function (data) {
