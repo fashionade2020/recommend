@@ -179,7 +179,7 @@ var FASHIONADE = (function ($w) {
         };
     };
     var postLogs = function(type) {
-      post('https://admin.fashionade.ai/dev_logs', genLogData(type));
+      post('https://admin.fashionade.ai/logs', genLogData(type));
     };
     var utils = {
         jsonToParams: function (data) {
@@ -190,10 +190,7 @@ var FASHIONADE = (function ($w) {
             return params.substring(0, params.length - 1)
         },
     };
-    var render = function(productId) {
-        if (productId) {
-            config.apiParams.productId = productId;
-        }
+    var render = function() {
         get(config.apiUrl + utils.jsonToParams(config.apiParams), function (d) {
             FASHIONADE.LOGS('init');
 
