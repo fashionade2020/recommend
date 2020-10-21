@@ -115,14 +115,16 @@
 }
 [data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList .fashionade--mainImageWrap {
     overflow:hidden;
-    width:280px;
     height:424px;
     margin:0 auto;
 }
 [data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--mainImage {
-    width:280px;
     height:424px;
     background-color:#efefef;
+}
+[data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--mainImage img {
+    width:100%;
+    height:auto;
 }
 [data-fashionade-render="recommend"] .fashionade--layerWrap .fashionade--recommendContentList .fashionade--itemList {
     overflow:hidden;
