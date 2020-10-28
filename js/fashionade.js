@@ -32,8 +32,8 @@ var FASHIONADE = (function ($w) {
         for (var innerHTML = '', i = 0, l = titles.length; i < l; ++i) {
             innerHTML += '<li class="' + (i === 0 ? 'on' : '') + '" onClick="' + (function(i, type) {
                 return (type === 'overlay')
-                    ? 'FASHIONADE.RECOMMEND_LAYER_CURRENT(' + (i + 1) + ')'
-                    : 'FASHIONADE.RECOMMEND_CURRENT(' + (i + 1) + ')'
+                    ? 'FASHIONADE.RECOMMEND_LAYER_CURRENT(' + (i + 1) + ');FASHIONADE.LOGS(\'click\', \'STYLE' + (i + 1) + '\');'
+                    : 'FASHIONADE.RECOMMEND_CURRENT(' + (i + 1) + ');FASHIONADE.LOGS(\'click\', \'STYLE' + (i + 1) + '\');'
             })(i, type) + '">' + titles[i].name + '</li>'
         }
         return '<ul class="fashionade--recommendTitleList">' + innerHTML + '</ul>'
@@ -59,11 +59,11 @@ var FASHIONADE = (function ($w) {
                 '<li class="fashionade--item"> \
                 <div class="fashionade--thumb" style="background-image:url(\'' +
                 items[i].imageUrl +
-                '\')"><a href="' + items[i].detailUrl + '" target="FROM_FASHIONADE_SDK" onclick="FASHIONADE.LOGS(\'click\')">' + items[i].name + '</a></div> \
+                '\')"><a href="' + items[i].detailUrl + '" target="FROM_FASHIONADE_SDK" onclick="FASHIONADE.LOGS(\'click\', \'THUMBNAIL\'' + (i + 1) + '\')">' + items[i].name + '</a></div> \
         <div class="fashionade--content"> \
           <dl> \
-        <dt class="fashionade--brand"><a href="' + items[i].detailUrl + '" target="FROM_FASHIONADE_SDK" onclick="FASHIONADE.LOGS(\'click\')">' + items[i].brand + '</a></dt> \
-        <dd class="fashionade--name"><a href="' + items[i].detailUrl + '" target="FROM_FASHIONADE_SDK" onclick="FASHIONADE.LOGS(\'click\')">' + items[i].name + '</a></dd> \
+        <dt class="fashionade--brand"><a href="' + items[i].detailUrl + '" target="FROM_FASHIONADE_SDK" onclick="FASHIONADE.LOGS(\'click\', \'BRAND\'' + (i + 1) + '\')">' + items[i].brand + '</a></dt> \
+        <dd class="fashionade--name"><a href="' + items[i].detailUrl + '" target="FROM_FASHIONADE_SDK" onclick="FASHIONADE.LOGS(\'click\', \'NAME\'' + (i + 1) + '\')">' + items[i].name + '</a></dd> \
           </dl> \
         </div> \
       </li>'
@@ -164,7 +164,7 @@ var FASHIONADE = (function ($w) {
             appKey: 'cahiers_test_9sdf9d8f982394hds9fhs9h923a',
         },
     };
-    var genLogData = function(type) {
+    var genLogData = function(type, eventPosition) {
         return {
             type: type,
             appKey: 'cahiers_test_9sdf9d8f982394hds9fhs9h923a',
@@ -177,10 +177,11 @@ var FASHIONADE = (function ($w) {
             windowName: window.name,
             ext: {},
             deviceTime: new Date(),
+            eventPosition: eventPosition !== undefined ? eventPosition : ''
         };
     };
-    var postLogs = function(type) {
-      post('https://admin.fashionade.ai/logs', genLogData(type));
+    var postLogs = function(type, eventPosition) {
+      post('https://admin.fashionade.ai/logs', genLogData(type, eventPosition));
     };
     var utils = {
         jsonToParams: function (data) {
@@ -202,8 +203,8 @@ var FASHIONADE = (function ($w) {
                             '<div class="fashionade--layerWrap"><div class="fashionade--layerInnerWrap">' +
                             strTitle(d, 'overlay') +
                             strContent(d, 'overlay') +
-                            (d.length > 1 ? '<button class="fashionade--btn fashionade--prev" onClick="FASHIONADE.RECOMMEND_LAYER_DIRECT(-1)">이전 추천보기</button> \
-                        <button class="fashionade--btn fashionade--next" onClick="FASHIONADE.RECOMMEND_LAYER_DIRECT(1)">다음 추천보기</button>' : '') +
+                            (d.length > 1 ? '<button class="fashionade--btn fashionade--prev" onClick="FASHIONADE.RECOMMEND_LAYER_DIRECT(-1);FASHIONADE.LOGS(\'click\', \'PREV\');">이전 추천보기</button> \
+                        <button class="fashionade--btn fashionade--next" onClick="FASHIONADE.RECOMMEND_LAYER_DIRECT(1);FASHIONADE.LOGS(\'click\', \'NEXT\');">다음 추천보기</button>' : '') +
                             '<button class="fashionade--btn fashionade--close" onClick="FASHIONADE.RECOMMEND_LAYER_REMOVE()">닫기</button></div></div> \
                             <div class="fashionade--dimmed" onClick="FASHIONADE.RECOMMEND_LAYER_REMOVE()"></div>';
 
@@ -216,8 +217,8 @@ var FASHIONADE = (function ($w) {
                         '<div class="fashionade--renderWrap">' +
                         strTitle(d) +
                         strContent(d) +
-                        (d.length > 1 ? '<button class="fashionade--btn fashionade--prev" onClick="FASHIONADE.RECOMMEND_DIRECT(-1)">이전 추천보기</button> \
-                    <button class="fashionade--btn fashionade--next" onClick="FASHIONADE.RECOMMEND_DIRECT(1)">다음 추천보기</button>' : '') +
+                        (d.length > 1 ? '<button class="fashionade--btn fashionade--prev" onClick="FASHIONADE.RECOMMEND_DIRECT(-1);FASHIONADE.LOGS(\'click\', \'PREV\');">이전 추천보기</button> \
+                    <button class="fashionade--btn fashionade--next" onClick="FASHIONADE.RECOMMEND_DIRECT(1);FASHIONADE.LOGS(\'click\', \'NEXT\');">다음 추천보기</button>' : '') +
                         '</div>';
 
                     FASHIONADE.LOGS('render');
@@ -273,8 +274,8 @@ var FASHIONADE = (function ($w) {
         RECOMMEND_LAYER_CURRENT: RECOMMEND.layer_current,
         RECOMMEND_LAYER_REMOVE: RECOMMEND.layer_remove,
         RECOMMEND_LAYER_MAINIMAGE: RECOMMEND.layer_showMainImage,
-        LOGS : function(type) {
-            postLogs(type);
+        LOGS : function(type, eventPosition) {
+            postLogs(type, eventPosition);
         },
         RENDER: render
     }
