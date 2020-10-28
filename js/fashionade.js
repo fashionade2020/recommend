@@ -59,11 +59,11 @@ var FASHIONADE = (function ($w) {
                 '<li class="fashionade--item"> \
                 <div class="fashionade--thumb" style="background-image:url(\'' +
                 items[i].imageUrl +
-                '\')"><a href="' + items[i].detailUrl + '" target="_blank" onclick="FASHIONADE.LOGS(\'click\')">' + items[i].name + '</a></div> \
+                '\')"><a href="' + items[i].detailUrl + '" target="FROM_FASHIONADE_SDK" onclick="FASHIONADE.LOGS(\'click\')">' + items[i].name + '</a></div> \
         <div class="fashionade--content"> \
           <dl> \
-        <dt class="fashionade--brand"><a href="' + items[i].detailUrl + '" target="_blank" onclick="FASHIONADE.LOGS(\'click\')">' + items[i].brand + '</a></dt> \
-        <dd class="fashionade--name"><a href="' + items[i].detailUrl + '" target="_blank" onclick="FASHIONADE.LOGS(\'click\')">' + items[i].name + '</a></dd> \
+        <dt class="fashionade--brand"><a href="' + items[i].detailUrl + '" target="FROM_FASHIONADE_SDK" onclick="FASHIONADE.LOGS(\'click\')">' + items[i].brand + '</a></dt> \
+        <dd class="fashionade--name"><a href="' + items[i].detailUrl + '" target="FROM_FASHIONADE_SDK" onclick="FASHIONADE.LOGS(\'click\')">' + items[i].name + '</a></dd> \
           </dl> \
         </div> \
       </li>'
@@ -158,7 +158,7 @@ var FASHIONADE = (function ($w) {
     var config = {
         apiUrl: 'https://www.fashionade.ai/api/v1/recommend-products',
         apiParams: {
-            productId: getUrlParams().productId || location.pathname.split('/')[3] || '',
+            productId: getUrlParams().productId || getUrlParams().product_no || location.pathname.split('/')[3] || '',
             madUuid: getMadUuid(),
             userId: '',
             appKey: 'cahiers_test_9sdf9d8f982394hds9fhs9h923a',
@@ -174,8 +174,9 @@ var FASHIONADE = (function ($w) {
             lang: navigator.language,
             page: location.href,
             referrer: document.referrer,
+            windowName: window.name,
             ext: {},
-            deviceTime: new Date()
+            deviceTime: new Date(),
         };
     };
     var postLogs = function(type) {
@@ -228,7 +229,41 @@ var FASHIONADE = (function ($w) {
             }
         });
     };
-    document.addEventListener('DOMContentLoaded', render);
+    var attachLogEventToButtons = function() {
+        if($$('.btnBuyUl .btn-buy a').length > 0) {
+            $$('.btnBuyUl .btn-buy a')[0].addEventListener('click', function() {
+                FASHIONADE.LOGS('buy');
+            });
+        }
+        if($$('.btnBuyUl .btn-se a').length > 0) {
+            $$('.btnBuyUl .btn-se a')[0].addEventListener('click', function () {
+                FASHIONADE.LOGS('cart');
+            });
+            $$('.btnBuyUl .btn-se a')[1].addEventListener('click', function () {
+                FASHIONADE.LOGS('wish');
+            });
+        }
+
+        if($$('#actionBuy').length > 0) {
+            $$('#actionBuy')[0].addEventListener('click', function() {
+                FASHIONADE.LOGS('buy');
+            });
+        }
+        if($$('#actionCart').length > 0) {
+            $$('#actionCart')[0].addEventListener('click', function() {
+                FASHIONADE.LOGS('cart');
+            });
+        }
+        if($$('#actionWish').length > 0) {
+            $$('#actionWish')[0].addEventListener('click', function() {
+                FASHIONADE.LOGS('wish');
+            });
+        }
+    };
+    document.addEventListener('DOMContentLoaded', function() {
+        attachLogEventToButtons();
+        render();
+    });
 
     return {
         RECOMMEND_DATA: RECOMMEND.DATA,
