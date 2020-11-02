@@ -59,11 +59,11 @@ var FASHIONADE = (function ($w) {
                 '<li class="fashionade--item"> \
                 <div class="fashionade--thumb" style="background-image:url(\'' +
                 items[i].imageUrl +
-                '\')"><a href="' + items[i].detailUrl + '" target="FROM_FASHIONADE_SDK" onclick="FASHIONADE.LOGS(\'click\', \'THUMBNAIL\'' + (i + 1) + '\')">' + items[i].name + '</a></div> \
+                '\')"><a href="' + items[i].detailUrl + '" target="FROM_FASHIONADE_SDK" onclick="FASHIONADE.LOGS(\'click\', \'THUMBNAIL' + (i + 1) + '\')">' + items[i].name + '</a></div> \
         <div class="fashionade--content"> \
           <dl> \
-        <dt class="fashionade--brand"><a href="' + items[i].detailUrl + '" target="FROM_FASHIONADE_SDK" onclick="FASHIONADE.LOGS(\'click\', \'BRAND\'' + (i + 1) + '\')">' + items[i].brand + '</a></dt> \
-        <dd class="fashionade--name"><a href="' + items[i].detailUrl + '" target="FROM_FASHIONADE_SDK" onclick="FASHIONADE.LOGS(\'click\', \'NAME\'' + (i + 1) + '\')">' + items[i].name + '</a></dd> \
+        <dt class="fashionade--brand"><a href="' + items[i].detailUrl + '" target="FROM_FASHIONADE_SDK" onclick="FASHIONADE.LOGS(\'click\', \'BRAND' + (i + 1) + '\')">' + items[i].brand + '</a></dt> \
+        <dd class="fashionade--name"><a href="' + items[i].detailUrl + '" target="FROM_FASHIONADE_SDK" onclick="FASHIONADE.LOGS(\'click\', \'NAME' + (i + 1) + '\')">' + items[i].name + '</a></dd> \
           </dl> \
         </div> \
       </li>'
